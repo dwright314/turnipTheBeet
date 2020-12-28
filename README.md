@@ -1,2 +1,2 @@
 # turnipTheBeet
-Class templates
+Class templates for learning network automation
