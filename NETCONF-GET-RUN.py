@@ -22,26 +22,26 @@ with manager.connect(host=router['host'],port=router['port'],username=router['us
 
     netconf_reply = m.get_config(source = 'running', filter = netconf_filter)
 
-    print(xml.dom.minidom.parseString(netconf_reply.xml).toprettyxml())
+print(xml.dom.minidom.parseString(netconf_reply.xml).toprettyxml())
 
-    print("#" * 40)
+print("#" * 40)
 
     #Parse returned XML to Dictionary
 
-    netconf_data = xmltodict.parse(netconf_reply.xml)["rpc-reply"]["data"]
+netconf_data = xmltodict.parse(netconf_reply.xml)["rpc-reply"]["data"]
 
-    print(netconf_data)
+print(netconf_data)
 
-    print("d" *40)
+print("d" *40)
 
     #Create List of Interfaces
 
-    interfaces = netconf_data["interfaces"]["interface"]
+interfaces = netconf_data["interfaces"]["interface"]
 
-    print(interfaces)
+print(interfaces)
 
-    print("I" * 40)
+print("I" * 40)
 
-    for interface in interfaces:
-        print(interface)
+for interface in interfaces:
+    print(interface)
           
