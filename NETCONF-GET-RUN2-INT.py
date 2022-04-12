@@ -11,17 +11,7 @@ from collections import OrderedDict
 router = {"host": "10.10.20.175", "port" : "830",
           "username":"cisco","password":"cisco"}
 
-##netconf_filter = """
-##<filter>
-##    <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
-##        <interface>
-##            
-##        </interface>
-##    </interfaces>
-##</filter>"""
 
-
-##</filter>"""
 netconf_filter = """
 
 <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
