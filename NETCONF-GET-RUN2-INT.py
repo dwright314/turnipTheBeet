@@ -11,18 +11,28 @@ from collections import OrderedDict
 router = {"host": "10.10.20.175", "port" : "830",
           "username":"cisco","password":"cisco"}
 
+##netconf_filter = """
+##<filter>
+##    <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+##        <interface>
+##            
+##        </interface>
+##    </interfaces>
+##</filter>"""
+
+
+##</filter>"""
 netconf_filter = """
-<filter>
-    <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
-        <interface>
-            
-        </interface>
-    </interfaces>
-</filter>"""
+
+<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+    <interface></interface>
+</interfaces>
+   
+"""
 
 with manager.connect(host=router['host'],port=router['port'],username=router['username'],password=router['password'],hostkey_verify=False) as m:
 
-    netconf_reply = m.get_config(source = 'running', filter = netconf_filter)
+    netconf_reply = m.get_config(source = 'running', filter = ("subtree",netconf_filter))
 
 print(xml.dom.minidom.parseString(netconf_reply.xml).toprettyxml())
 
