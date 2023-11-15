@@ -1,6 +1,6 @@
 ## ********************************************
 ##                                            *
-##  Gets IETF unaugmented Interfaces              *
+##  Gets Cisco Native Interfaces              *
 ##                                            *
 ## ********************************************
 
@@ -29,13 +29,13 @@ router = {"host": "10.10.20.48", "port" : "830",
 netconf_filter = """
 <filter
     xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
-        <interfaces
-        xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <native
+        xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
   
             <interface>
             
             </interface>
-        </interfaces>
+        </native>
 </filter>"""
 
 

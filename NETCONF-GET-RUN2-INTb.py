@@ -1,8 +1,4 @@
-## ********************************************
-##                                            *
-##  Gets IETF unaugmented Interfaces              *
-##                                            *
-## ********************************************
+
 
 
 import xml.etree.ElementTree as ET
@@ -12,32 +8,17 @@ from lxml import etree
 from ncclient import manager
 from collections import OrderedDict
 
-#router = {"host": "10.10.20.175", "port" : "830",
-          #"username":"cisco","password":"cisco"}
-
-router = {"host": "10.10.20.48", "port" : "830",
-          "username":"developer","password":"C1sco12345"}
-
-##<filter>
-##    <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
-##        <interface>
-##            
-##        </interface>
-##    </interfaces>
-##</filter>"""
+router = {"host": "10.10.20.175", "port" : "830",
+          "username":"cisco","password":"cisco"}
 
 netconf_filter = """
-<filter
-    xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
-        <interfaces
-        xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
-  
-            <interface>
+<filter>
+    <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface>
             
-            </interface>
-        </interfaces>
+        </interface>
+    </interfaces>
 </filter>"""
-
 
 with manager.connect(host=router['host'],port=router['port'],username=router['username'],password=router['password'],hostkey_verify=False) as m:
 
