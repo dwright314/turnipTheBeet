@@ -1,14 +1,14 @@
 
 
-
-
 from ncclient import manager
 
 
 router = {"host": "10.10.20.175", "port" : "830",
           "username":"cisco","password":"cisco"}
 
-xmlInt = """<config>
+### xmlns:xc added for ios xe 17.x and greater
+
+xmlInt = """<config xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns = "urn:ietf:params:xml:ns:netconf:base:1.0">  
 		<native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
 			<interface>
                             <%intName%>
