@@ -1,6 +1,6 @@
 ## ********************************************
 ##                                            *
-##  Gets IETF unaugmented Interfaces              *
+##  Gets Cisco Native Interfaces              *
 ##                                            *
 ## ********************************************
 
@@ -26,32 +26,22 @@ router = {"host": "10.10.20.48", "port" : "830",
 ##    </interfaces>
 ##</filter>"""
 
-
 netconf_filter = """
-<<<<<<< HEAD
 <filter
     xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
-        <interfaces
-        xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <native
+        xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
   
             <interface>
             
             </interface>
-        </interfaces>
+        </native>
 </filter>"""
-=======
-
-<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
-    <interface></interface>
-</interfaces>
-   
-"""
->>>>>>> 5809eca16ddd3112868a75559eaf252decaca85d
 
 
 with manager.connect(host=router['host'],port=router['port'],username=router['username'],password=router['password'],hostkey_verify=False) as m:
 
-    netconf_reply = m.get_config(source = 'running', filter = ("subtree",netconf_filter))
+    netconf_reply = m.get_config(source = 'running', filter = netconf_filter)
 
 print(xml.dom.minidom.parseString(netconf_reply.xml).toprettyxml())
 
