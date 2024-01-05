@@ -1,5 +1,6 @@
 import requests
 
+
 def getCookie(addr,name, pwd) :
 
 #NX REST API Authen See REST API Reference for format of payload below
