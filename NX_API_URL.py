@@ -33,7 +33,7 @@ def printNxIntList(addr,auth_cookie,intList):
 
     #resourceQuery is derived from DME model through Visore Browser
 
-##    resourceQuery = ""
+    resourceQuery = ""
 ##    myheaders = {
 ##      'Content-Type': 'application/json',
 ##      'Cookie': 'APIC-cookie=' + auth_cookie
