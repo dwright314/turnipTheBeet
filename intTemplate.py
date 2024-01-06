@@ -1,10 +1,11 @@
 import requests
 import json
 
+addr = "10.10.20.48"
 
-url = "https://10.10.20.175:443/restconf/data/ietf-interfaces:interfaces/interface=GigabitEthernet2"
-username = 'cisco'
-password = 'cisco'
+url = "https://"+addr+":443/restconf/data/ietf-interfaces:interfaces/interface=GigabitEthernet2"
+username = 'developer'
+password = 'C1sco12345'
 payload={"ietf-interfaces:interface": {
                     "name": "GigabitEthernet2",
                     "description": "Configured by RESTCONF",

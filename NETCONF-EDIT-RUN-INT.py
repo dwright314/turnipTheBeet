@@ -3,8 +3,8 @@
 from ncclient import manager
 
 
-router = {"host": "10.10.20.175", "port" : "830",
-          "username":"cisco","password":"cisco"}
+router = {"host": "10.10.20.48", "port" : "830",
+          "username":"developer","password":"C1sco12345"}
 
 ### xmlns:xc added for ios xe 17.x and greater
 
@@ -22,7 +22,7 @@ xmlInt = """<config xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns = "
                                          </primary>
                                     </address>                                   
 				</ip>				
-			    </GigabitEthernet>
+			    </%intName%>
 			</interface>
 		    
                 </native>
@@ -33,7 +33,7 @@ xmlInt = """<config xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns = "
 
 print(xmlInt)
 
-xmlInt = xmlInt.replace("%addr%", "172.16.1.2")
+xmlInt = xmlInt.replace("%addr%", "172.16.1.4")
 xmlInt = xmlInt.replace("%intName%", "GigabitEthernet")
 xmlInt = xmlInt.replace("%intNum%", "2")
 xmlInt = xmlInt.replace("%mask%", "255.255.255.0")

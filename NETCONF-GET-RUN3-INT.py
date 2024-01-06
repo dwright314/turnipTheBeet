@@ -57,12 +57,12 @@ print("d" *40)
 
 #Create List of Interfaces
 
-interfaces = netconf_data["interfaces"]["interface"]
+interfaces = netconf_data["native"]["interface"]
 
 print(interfaces)
 
 print("I" * 40)
 
 for interface in interfaces:
-    print(interface)
-          
+    print(interfaces[interface])
+    print()      
