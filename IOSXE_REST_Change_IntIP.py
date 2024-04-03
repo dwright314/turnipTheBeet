@@ -13,9 +13,9 @@ iosXeLib.printInt(int_list) #This iterates the dictionary that is returned
 
 #Gets interface to modify and validates
 
-valid_int = True
+valid_int = False
 
-while valid_int ==True:
+while valid_int ==False:
     valid_int = False
     #Don't modify G1. It's the management interface
     int_Name = input("Which interface do you want to modify?")
@@ -30,15 +30,15 @@ while valid_int ==True:
 
 #Gets and validates IP address /mask
 
-valid_IP = True
-while valid_IP == True:
+valid_IP = False
+while valid_IP == False:
     int_IP = input("Enter a new IP address for " + int_name + ":")
     valid_IP = isValidIP(int_IP)
     if valid_IP == False:
         print("IP must be x.x.x.x where x >=0 and x <=255")
 
-valid_mask = True
-while valid_mask == True:
+valid_mask = False
+while valid_mask == False:
     int_mask = input("Enter a new mask for " + int_name + " with IP of " + int_IP + ":")
     valid_mask = isValidMask(int_mask)
     if valid_mask == False:
